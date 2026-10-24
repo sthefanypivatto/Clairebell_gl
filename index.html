@@ -1,1 +1,1663 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clairebell ♡ A Love Written in the Stars</title>
+
+<meta name="description"
+content="Um universo dedicado a Clairebell, com momentos inesquecíveis,
+cenas românticas e uma história interativa de Girls' Love.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+rel="stylesheet">
+
+<style>
+:root {
+  --pink: #f5c4d6;
+  --light: #fff5f8;
+  --rose: #d66c91;
+  --wine: #702d4b;
+  --purple: #c5b4e8;
+  --text: #513443;
+  --white: #fffdfd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background: var(--light);
+  overflow-x: hidden;
+}
+
+button, a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--wine);
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  min-height: 78px;
+  padding: 16px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 249, 251, .94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #f0d6e1;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--wine);
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--rose);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--wine);
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 11px 17px;
+  transition: .3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: var(--wine);
+  color: white;
+}
+
+main {
+  min-height: 75vh;
+}
+
+.tab-panel {
+  display: none;
+  animation: pageIn .6s ease both;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  min-height: 690px;
+  padding: 100px 8%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg,
+      rgba(65, 26, 48, .86),
+      rgba(88, 39, 65, .42),
+      rgba(75, 30, 52, .15)),
+    url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=2000&q=85")
+    center 45% / cover;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 690px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  margin-bottom: 20px;
+  color: #ffe0ec;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.3rem, 8vw, 6.5rem);
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero h1 em {
+  color: #ffc5dc;
+  font-weight: 500;
+}
+
+.hero p {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  max-width: 550px;
+  margin-bottom: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 30px;
+  border: none;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.primary-btn {
+  background: #f8c0d5;
+  color: #57243d;
+  font-weight: 700;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px #0002;
+}
+
+.secondary-btn {
+  background: white;
+  color: var(--wine);
+  border: 1px solid #eccbd9;
+}
+
+.section {
+  padding: 85px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 45px;
+}
+
+.section-heading .eyebrow {
+  color: var(--rose);
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  color: var(--wine);
+  margin-bottom: 15px;
+}
+
+.section-heading p {
+  line-height: 1.8;
+  color: #795b6a;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.story-card {
+  background: white;
+  border: 1px solid #f0d9e3;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 35px #7b33510b;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #7b335116;
+}
+
+.story-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.story-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.65rem;
+  color: var(--wine);
+  margin-bottom: 12px;
+}
+
+.story-card p {
+  line-height: 1.9;
+  color: #795b6a;
+}
+
+.spoiler {
+  margin-top: 18px;
+  padding: 13px;
+  background: #fff0f5;
+  border-radius: 12px;
+  color: var(--wine);
+  border: 1px solid #f2cbd9;
+}
+
+.quote-banner {
+  background: linear-gradient(120deg, #74304e, #a04b70);
+  color: white;
+  padding: 65px 10%;
+  text-align: center;
+}
+
+.quote-banner blockquote {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.quote-banner p {
+  margin-top: 18px;
+  color: #ffd5e5;
+}
+
+.soft-bg {
+  background: #ffedf3;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 23px;
+  overflow: hidden;
+  border: 1px solid #f0d9e3;
+  box-shadow: 0 12px 30px #74304e10;
+  transition: .35s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-7px);
+}
+
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.6;
+  background: #f5dce6;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.gallery-card:hover .gallery-image img {
+  transform: scale(1.07);
+}
+
+.image-label {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(91, 37, 62, .85);
+  color: white;
+  border-radius: 20px;
+  padding: 8px 13px;
+  font-size: .8rem;
+}
+
+.gallery-info {
+  padding: 23px;
+}
+
+.gallery-info h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--wine);
+  font-size: 1.45rem;
+  margin-bottom: 10px;
+}
+
+.gallery-info p {
+  font-size: .94rem;
+  line-height: 1.8;
+  color: #795b6a;
+}
+
+.moment-tag {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 7px 12px;
+  background: #fff0f5;
+  color: var(--wine);
+  border-radius: 20px;
+  font-size: .78rem;
+}
+
+.video-section {
+  margin-top: 55px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.video-card {
+  background: white;
+  padding: 15px;
+  border: 1px solid #f0d9e3;
+  border-radius: 22px;
+}
+
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f4c8d9, #e4d7f8);
+  border-radius: 15px;
+}
+
+.video-placeholder span {
+  font-size: 2.5rem;
+}
+
+.video-placeholder p {
+  line-height: 1.6;
+}
+
+.video-card h3 {
+  margin: 18px 4px 8px;
+  font-family: "Playfair Display", serif;
+  color: var(--wine);
+}
+
+.video-card > p {
+  padding: 0 4px 8px;
+  color: #795b6a;
+  line-height: 1.7;
+  font-size: .9rem;
+}
+
+.video-card iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 15px;
+}
+
+.game-intro {
+  background:
+    linear-gradient(120deg, rgba(84, 31, 58, .92),
+    rgba(126, 55, 88, .78)),
+    url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1600&q=80")
+    center / cover;
+  color: white;
+  text-align: center;
+  padding: 85px 8%;
+}
+
+.game-intro h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  margin-bottom: 18px;
+}
+
+.game-intro p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.9;
+  color: #ffe1ed;
+}
+
+.game-area {
+  padding: 65px 7%;
+  background: #fff4f8;
+}
+
+.game-container {
+  max-width: 850px;
+  margin: auto;
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 65px #77334e16;
+  border: 1px solid #f0d9e3;
+}
+
+.game-cover {
+  min-height: 220px;
+  padding: 40px 25px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: linear-gradient(130deg, #f5c5d8, #d8c9f0);
+}
+
+.game-cover .game-heart {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.game-cover h2 {
+  font-family: "Playfair Display", serif;
+  color: #702d4b;
+  font-size: 2rem;
+}
+
+.game-content {
+  padding: clamp(22px, 5vw, 45px);
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #8d6377;
+  font-size: .85rem;
+  margin-bottom: 10px;
+}
+
+.progress-track {
+  height: 7px;
+  background: #f8e4ec;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #d66c91, #a876be);
+  transition: width .4s;
+}
+
+.game-content h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--wine);
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  margin-bottom: 17px;
+}
+
+.game-story {
+  line-height: 1.95;
+  margin-bottom: 25px;
+  color: #795b6a;
+  white-space: pre-line;
+}
+
+.choices {
+  display: grid;
+  gap: 13px;
+}
+
+.choice-btn {
+  padding: 17px 20px;
+  background: #fff7fa;
+  color: var(--wine);
+  border: 1px solid #edcfdd;
+  border-radius: 15px;
+  text-align: left;
+  transition: .25s;
+  line-height: 1.6;
+}
+
+.choice-btn:hover {
+  background: #fae2ec;
+  border-color: var(--rose);
+  transform: translateX(4px);
+}
+
+.choice-btn:disabled {
+  opacity: .7;
+  cursor: default;
+}
+
+.game-feedback {
+  display: none;
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 15px;
+  line-height: 1.8;
+  margin-top: 22px;
+  border: 1px solid #f0d0dd;
+}
+
+.game-feedback.show {
+  display: block;
+  animation: pageIn .4s ease;
+}
+
+.game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.game-actions button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 25px;
+}
+
+.next-btn {
+  background: var(--wine);
+  color: white;
+}
+
+.restart-btn {
+  background: #f8e4ec;
+  color: var(--wine);
+}
+
+.ending-badge {
+  display: inline-block;
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #f5d5e3;
+  color: var(--wine);
+  font-size: .85rem;
+  margin-bottom: 15px;
+}
+
+footer {
+  padding: 40px 7%;
+  text-align: center;
+  background: #55263f;
+  color: #ffe4ee;
+  line-height: 2;
+}
+
+footer .footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.heart {
+  position: fixed;
+  z-index: 150;
+  pointer-events: none;
+  animation: floatUp 1.5s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(.6) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-150px) scale(1.5) rotate(25deg);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s, transform .7s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 600px;
+    padding: 70px 7%;
+    background-position: 57% center;
+  }
+
+  .section {
+    padding: 65px 6%;
+  }
+
+  .story-grid,
+  .gallery-grid,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-btn {
+    padding: 9px 11px;
+    font-size: .85rem;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .game-area {
+    padding: 35px 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#inicio" class="logo" aria-label="Clairebell, início">
+    clairebell <span>♡</span>
+  </a>
+
+  <nav aria-label="Navegação principal">
+    <button class="tab-btn active" data-tab="inicio"
+      aria-selected="true">♡ O Dorama</button>
+
+    <button class="tab-btn" data-tab="momentos"
+      aria-selected="false">✧ Momentos</button>
+
+    <button class="tab-btn" data-tab="jogo"
+      aria-selected="false">♧ Jogo Interativo</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ABA 1: O DORAMA -->
+
+<section id="inicio" class="tab-panel active">
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Uma história para guardar no coração</div>
+
+      <h1>Clairebell:<br><em>entre olhares</em><br>e promessas.</h1>
+
+      <p>
+        Existem histórias que assistimos. E existem aquelas que sentimos.
+        Entre encontros, sentimentos e pequenos gestos, descubra um espaço
+        feito para celebrar o universo de Clairebell.
+      </p>
+
+      <button class="primary-btn" onclick="openTab('momentos')">
+        Explorar momentos ♡
+      </button>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Nosso pequeno universo</div>
+      <h2>Uma história, tantos sentimentos</h2>
+      <p>
+        Um cantinho especial para revisitar a história, recordar cenas
+        marcantes e explorar tudo aquilo que torna uma narrativa romântica
+        inesquecível.
+      </p>
+    </div>
+
+    <div class="story-grid">
+
+      <article class="story-card reveal">
+        <div class="story-icon">🌷</div>
+        <h3>Introdução</h3>
+        <p>
+          Toda grande história começa com algo pequeno: um olhar que dura
+          um segundo a mais, uma conversa inesperada ou uma sensação que
+          nenhuma das duas consegue explicar.
+        </p>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">💌</div>
+        <h3>Conheça o universo</h3>
+        <p>
+          Explore os sentimentos, os conflitos e as possibilidades de uma
+          história Girls' Love. Aqui, cada gesto pode esconder uma declaração
+          e cada silêncio pode dizer mais do que mil palavras.
+        </p>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">🦋</div>
+        <h3>Resumo</h3>
+        <p>
+          Entre aproximações e desencontros, duas pessoas descobrem que
+          amar também significa enfrentar medos, respeitar diferenças
+          e escolher ficar, mesmo quando tudo parece complicado.
+        </p>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">🌙</div>
+        <h3>O final</h3>
+        <p>
+          Algumas histórias terminam quando os créditos aparecem.
+          Outras continuam na memória, nas cenas favoritas e nas
+          possibilidades que imaginamos para as personagens.
+        </p>
+
+        <div class="spoiler">
+          ✨ <strong>Aviso:</strong> esta seção poderá receber o resumo
+          oficial do desfecho de Clairebell.
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="quote-banner">
+    <blockquote>
+      "Talvez o amor seja isso: encontrar alguém que transforma
+      os pequenos momentos em eternidade."
+    </blockquote>
+    <p>♡ Um pensamento inspirado no universo romântico de Clairebell</p>
+  </div>
+
+  <section class="section">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Feito para fãs</div>
+      <h2>Mais do que uma história</h2>
+      <p>
+        Um espaço para compartilhar emoções, recordar cenas favoritas
+        e imaginar novos caminhos para as personagens.
+      </p>
+    </div>
+
+    <div style="text-align:center">
+      <button class="primary-btn" onclick="openTab('jogo')">
+        Quero escolher a história delas ✧
+      </button>
+    </div>
+  </section>
+
+</section>
+
+
+<!-- ABA 2: MOMENTOS -->
+
+<section id="momentos" class="tab-panel">
+
+  <div class="hero" style="
+    min-height:480px;
+    background-position:center 40%;
+  ">
+    <div class="hero-content">
+      <div class="eyebrow">Nossa coleção de sentimentos</div>
+      <h1>Momentos que<br><em>ficam para sempre.</em></h1>
+      <p>
+        Os olhares, as palavras, os encontros e os clichês que fazem
+        o coração bater mais forte.
+      </p>
+    </div>
+  </div>
+
+  <section class="section soft-bg">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Capítulo favorito</div>
+      <h2>Momentos inesquecíveis</h2>
+      <p>
+        Uma galeria para destacar as cenas que merecem ser lembradas.
+        As imagens abaixo são ilustrativas e podem ser substituídas
+        por fotos oficiais autorizadas das protagonistas.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=85"
+            alt="Casal abraçado em um momento delicado"
+            loading="lazy">
+          <span class="image-label">♡ O abraço</span>
+        </div>
+
+        <div class="gallery-info">
+          <h3>Quando o mundo para</h3>
+          <p>
+            Aquele tipo de momento em que um abraço parece dizer
+            tudo o que as palavras não conseguem expressar.
+          </p>
+          <span class="moment-tag">Momento inesquecível</span>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=85"
+            alt="Duas pessoas compartilhando um momento afetuoso"
+            loading="lazy">
+          <span class="image-label">✧ A conexão</span>
+        </div>
+
+        <div class="gallery-info">
+          <h3>Um olhar diferente</h3>
+          <p>
+            Às vezes, a diferença entre amizade e amor aparece
+            justamente no jeito de olhar para alguém.
+          </p>
+          <span class="moment-tag">Química entre elas</span>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=85"
+            alt="Flores românticas em tons delicados"
+            loading="lazy">
+          <span class="image-label">🌷 A promessa</span>
+        </div>
+
+        <div class="gallery-info">
+          <h3>Pequenos gestos</h3>
+          <p>
+            Uma lembrança, uma mensagem ou uma promessa:
+            são os detalhes que tornam uma relação especial.
+          </p>
+          <span class="moment-tag">Cena para guardar</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Elas e suas palavras</div>
+      <h2>A melhor parte delas</h2>
+      <p>
+        Uma área dedicada às falas favoritas, às declarações
+        e aos pequenos detalhes que revelam os sentimentos.
+      </p>
+    </div>
+
+    <div class="story-grid">
+
+      <article class="story-card reveal">
+        <div class="story-icon">💗</div>
+        <h3>A declaração</h3>
+        <p>
+          "Se eu pudesse escolher novamente, ainda encontraria
+          um caminho para chegar até você."
+        </p>
+        <span class="moment-tag">Frase romântica ilustrativa</span>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">🦋</div>
+        <h3>O silêncio que fala</h3>
+        <p>
+          Nem toda declaração precisa ser dita. Às vezes, a forma
+          como uma personagem olha para a outra já conta a história inteira.
+        </p>
+        <span class="moment-tag">Química entre protagonistas</span>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">🌙</div>
+        <h3>Quando bate a saudade</h3>
+        <p>
+          Aquele instante em que alguém percebe que sente falta
+          não apenas da presença da outra pessoa, mas também de
+          quem se torna quando estão juntas.
+        </p>
+        <span class="moment-tag">Sentimentos</span>
+      </article>
+
+      <article class="story-card reveal">
+        <div class="story-icon">💌</div>
+        <h3>Uma promessa</h3>
+        <p>
+          "Não preciso que tudo seja perfeito. Só quero que
+          a gente tenha coragem de tentar."
+        </p>
+        <span class="moment-tag">Frase romântica ilustrativa</span>
+      </article>
+
+    </div>
+
+    <p style="
+      text-align:center;
+      margin-top:25px;
+      color:#896879;
+      line-height:1.8;
+    ">
+      Nota: as frases acima são criações ilustrativas, não falas oficiais
+      do dorama. Elas poderão ser substituídas por citações verificadas.
+    </p>
+  </section>
+
+
+  <section class="section soft-bg">
+    <div class="section-heading reveal">
+      <div class="eyebrow">A fórmula do romance</div>
+      <h2>Os clichês delas</h2>
+      <p>
+        Porque toda história romântica tem aqueles momentos que
+        fazem os fãs sorrirem, suspirarem e quererem assistir novamente.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=85"
+            alt="Abraço romântico"
+            loading="lazy">
+        </div>
+        <div class="gallery-info">
+          <h3>O abraço inesperado</h3>
+          <p>
+            Uma tenta ir embora, a outra segura sua mão.
+            De repente, nenhuma das duas quer soltar.
+          </p>
+          <span class="moment-tag">Clichê romântico ♡</span>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=85"
+            alt="Duas pessoas próximas"
+            loading="lazy">
+        </div>
+        <div class="gallery-info">
+          <h3>O quase beijo</h3>
+          <p>
+            O silêncio aumenta, os olhares se encontram
+            e alguém aparece exatamente na hora errada.
+          </p>
+          <span class="moment-tag">Tensão romântica ✨</span>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <div class="gallery-image">
+          <img
+            src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=85"
+            alt="Flores para uma pessoa especial"
+            loading="lazy">
+        </div>
+        <div class="gallery-info">
+          <h3>O ciúme disfarçado</h3>
+          <p>
+            "Não estou com ciúmes." E, cinco segundos depois,
+            já está perguntando quem era aquela pessoa.
+          </p>
+          <span class="moment-tag">Clichê GL 🌷</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="section-heading reveal">
+      <div class="eyebrow">Play & replay</div>
+      <h2>Nosso cantinho de vídeos</h2>
+      <p>
+        Aqui você poderá colocar trailers, entrevistas, cenas
+        favoritas e vídeos editados por fãs, respeitando os direitos
+        dos criadores.
+      </p>
+    </div>
+
+    <div class="video-grid">
+
+      <article class="video-card reveal">
+        <div class="video-placeholder">
+          <span>▶️</span>
+          <p>
+            Adicione aqui o vídeo oficial ou um trailer autorizado
+            de Clairebell.
+          </p>
+        </div>
+        <h3>01 — Trailer e apresentação</h3>
+        <p>
+          Um espaço para apresentar o universo e as protagonistas.
+        </p>
+      </article>
+
+      <article class="video-card reveal">
+        <div class="video-placeholder">
+          <span>🎬</span>
+          <p>
+            Adicione aqui uma cena autorizada ou um vídeo
+            publicado oficialmente.
+          </p>
+        </div>
+        <h3>02 — Cenas favoritas</h3>
+        <p>
+          Um cantinho para rever os momentos mais emocionantes.
+        </p>
+      </article>
+
+    </div>
+
+    <div style="
+      max-width:750px;
+      margin:35px auto 0;
+      text-align:center;
+      line-height:1.9;
+      color:#795b6a;
+    ">
+      <p>
+        <strong>Como adicionar um vídeo:</strong> quando tiver o link
+        de um vídeo do YouTube que permita incorporação, substitua
+        o bloco ilustrativo por um elemento
+        <code>&lt;iframe&gt;</code> com o endereço de incorporação.
+      </p>
+    </div>
+  </section>
+
+</section>
+
+
+<!-- ABA 3: JOGO INTERATIVO -->
+
+<section id="jogo" class="tab-panel">
+
+  <div class="game-intro">
+    <div class="eyebrow">Sua escolha muda tudo</div>
+    <h1>E se você decidisse?</h1>
+    <p>
+      Entre em uma história romântica interativa, escolha as atitudes
+      das protagonistas e descubra como suas decisões podem transformar
+      o destino delas.
+    </p>
+  </div>
+
+  <section class="game-area">
+
+    <div class="game-container">
+
+      <div class="game-cover">
+        <div class="game-heart">💌</div>
+        <h2>Entre Nós Duas</h2>
+        <p style="margin-top:10px;color:#702d4b">
+          Uma história interativa de amor e escolhas.
+        </p>
+      </div>
+
+      <div class="game-content">
+
+        <div class="progress-label">
+          <span id="chapterLabel">Prólogo</span>
+          <span id="progressLabel">0% concluído</span>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div id="gameScreen" aria-live="polite"></div>
+
+        <div id="gameFeedback" class="game-feedback"
+          aria-live="polite"></div>
+
+        <div class="game-actions">
+          <button id="nextBtn" class="next-btn"
+            style="display:none" onclick="continueGame()">
+            Continuar a história ♡
+          </button>
+
+          <button class="restart-btn" onclick="restartGame()">
+            ↻ Recomeçar
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <p style="
+      text-align:center;
+      max-width:650px;
+      margin:30px auto 0;
+      color:#896879;
+      line-height:1.8;
+    ">
+      Cada escolha registra um caminho diferente. Experimente novamente
+      para descobrir outros desfechos.
+    </p>
+
+  </section>
+
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-logo">clairebell ♡</div>
+  <p>Um universo de histórias, sentimentos e possibilidades.</p>
+  <p>Projeto de fã, sem afiliação oficial com os criadores do dorama.</p>
+  <p>Feito com carinho ♡ <span id="year"></span></p>
+</footer>
+
+<script>
+/* ==========================
+   NAVEGAÇÃO ENTRE AS 3 ABAS
+========================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".tab-panel");
+
+function openTab(tabId) {
+  panels.forEach(panel => {
+    panel.classList.toggle("active", panel.id === tabId);
+  });
+
+  tabButtons.forEach(button => {
+    const selected = button.dataset.tab === tabId;
+
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-selected", String(selected));
+  });
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+  observeReveals();
+}
+
+tabButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    openTab(button.dataset.tab);
+  });
+});
+
+
+/* ==========================
+   ANIMAÇÕES DOS CARTÕES
+========================== */
+
+let revealObserver;
+
+function observeReveals() {
+  if (revealObserver) {
+    revealObserver.disconnect();
+  }
+
+  revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll(
+    ".tab-panel.active .reveal:not(.visible)"
+  ).forEach(element => {
+    revealObserver.observe(element);
+  });
+}
+
+observeReveals();
+
+
+/* ==========================
+   CORAÇÕES ANIMADOS
+========================== */
+
+document.addEventListener("click", event => {
+  const button = event.target.closest(
+    ".primary-btn, .choice-btn, .next-btn"
+  );
+
+  if (!button) return;
+
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["♡", "♥", "✧", "💗"][
+    Math.floor(Math.random() * 4)
+  ];
+
+  heart.style.left = event.clientX + "px";
+  heart.style.top = event.clientY + "px";
+  heart.style.color = "#d66c91";
+  heart.style.fontSize = (18 + Math.random() * 18) + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 1600);
+});
+
+
+/* ==========================
+   JOGO NARRATIVO
+==========================
+
+   Esta é uma história original de demonstração.
+   As personagens e as situações podem ser adaptadas
+   à história oficial de Clairebell.
+*/
+
+const story = {
+  start: {
+    chapter: "Capítulo 1 — A mensagem",
+    title: "Uma notificação inesperada 💌",
+    text:
+      "Faz semanas desde a última conversa entre as duas. " +
+      "Em uma noite tranquila, Bell recebe uma mensagem de Claire: " +
+      "“Você ainda pensa em mim?”\n\n" +
+      "O coração de Bell acelera. Ela escreve uma resposta, apaga, " +
+      "escreve outra e fica olhando para a tela. O que ela deve fazer?",
+    choices: [
+      {
+        label: "💗 A — Responder com sinceridade",
+        feedback:
+          "Bell respira fundo e decide não esconder o que sente. " +
+          "A resposta chega quase imediatamente. Claire também " +
+          "estava esperando por esse momento.",
+        next: "honest"
+      },
+      {
+        label: "🌙 B — Fingir que não se importa",
+        feedback:
+          "Bell deixa o celular de lado, tentando parecer indiferente. " +
+          "Mas a mensagem continua em sua cabeça. Talvez o orgulho " +
+          "esteja falando mais alto do que o coração.",
+        next: "pride"
+      },
+      {
+        label: "🌷 C — Convidá-la para conversar pessoalmente",
+        feedback:
+          "Bell decide que uma conversa merece mais do que palavras " +
+          "em uma tela. Ela convida Claire para um encontro no lugar " +
+          "onde costumavam passar as tardes juntas.",
+        next: "meeting"
+      }
+    ]
+  },
+
+  honest: {
+    chapter: "Capítulo 2 — Sem esconder sentimentos",
+    title: "A coragem de dizer a verdade 💗",
+    text:
+      "Claire responde que também sente saudade. As duas começam " +
+      "a conversar sobre o passado, mas existe uma pergunta " +
+      "que ainda precisa ser respondida: o que elas realmente querem?",
+    choices: [
+      {
+        label: "💕 A — Admitir que ainda existe amor",
+        feedback:
+          "Bell decide abrir o coração. Claire fica em silêncio " +
+          "por alguns segundos, com os olhos marejados, antes " +
+          "de confessar que nunca deixou de sentir o mesmo.",
+        next: "love"
+      },
+      {
+        label: "🦋 B — Ir com calma e reconstruir a confiança",
+        feedback:
+          "As duas concordam que não precisam resolver tudo naquela " +
+          "noite. Começam a reconstruir a relação com paciência, " +
+          "pequenos encontros e novas lembranças.",
+        next: "slow"
+      }
+    ]
+  },
+
+  pride: {
+    chapter: "Capítulo 2 — O peso do silêncio",
+    title: "Quando o orgulho responde 🌙",
+    text:
+      "Claire vê que a mensagem foi lida, mas não recebe resposta. " +
+      "Ela pensa em desistir, até que uma amiga pergunta se " +
+      "realmente vale a pena esconder sentimentos por medo.",
+    choices: [
+      {
+        label: "💌 A — Enviar uma mensagem honesta",
+        feedback:
+          "Bell finalmente admite que ficou com medo de se machucar. " +
+          "Claire aceita conversar, desde que as duas tentem " +
+          "ser sinceras uma com a outra.",
+        next: "honest"
+      },
+      {
+        label: "🌧️ B — Esperar que Claire tome a iniciativa",
+        feedback:
+          "Os dias passam sem que nenhuma das duas tome uma atitude. " +
+          "O sentimento permanece, mas o silêncio cria uma distância " +
+          "que talvez pudesse ter sido evitada.",
+        next: "distance"
+      }
+    ]
+  },
+
+  meeting: {
+    chapter: "Capítulo 2 — O reencontro",
+    title: "O lugar de sempre 🌷",
+    text:
+      "Claire aceita o convite. Quando chega, encontra Bell " +
+      "esperando com duas bebidas e um sorriso nervoso. " +
+      "O reencontro parece familiar, mas muita coisa mudou.",
+    choices: [
+      {
+        label: "💗 A — Perguntar por que Claire voltou",
+        feedback:
+          "Claire revela que tentou seguir em frente, mas percebeu " +
+          "que ainda precisava ter aquela conversa. Pela primeira vez, " +
+          "as duas falam sem fugir dos assuntos difíceis.",
+        next: "truth"
+      },
+      {
+        label: "🫶 B — Relembrar os momentos felizes",
+        feedback:
+          "Entre risadas e lembranças, as duas recuperam a intimidade. " +
+          "Mas uma pergunta permanece: será que agora conseguirão " +
+          "construir algo diferente?",
+        next: "slow"
+      }
+    ]
+  },
+
+  truth: {
+    chapter: "Capítulo 3 — A verdade",
+    title: "O que ficou por dizer 🦋",
+    text:
+      "Depois de uma conversa sincera, Claire segura a mão de Bell. " +
+      "Nenhuma das duas quer repetir os mesmos erros. " +
+      "Como devem dar o próximo passo?",
+    choices: [
+      {
+        label: "❤️ A — Começar uma nova história juntas",
+        feedback:
+          "As duas decidem tentar novamente, dessa vez sem esconder " +
+          "seus medos ou suas expectativas. Ainda haverá desafios, " +
+          "mas agora elas sabem que podem enfrentá-los juntas.",
+        next: "love"
+      },
+      {
+        label: "🌷 B — Dar tempo ao tempo",
+        feedback:
+          "Elas decidem respeitar o próprio ritmo. A relação não " +
+          "recebe um nome naquela noite, mas uma nova possibilidade " +
+          "surge, construída com cuidado e confiança.",
+        next: "slow"
+      }
+    ]
+  },
+
+  love: {
+    chapter: "Final desbloqueado",
+    title: "Final 1 — Escolher você ❤️",
+    ending: true,
+    badge: "Final romântico",
+    text:
+      "Sob as luzes suaves da cidade, Claire e Bell finalmente " +
+      "se permitem viver o que sentem.\n\n" +
+      "Não prometem uma vida perfeita. Prometem conversar, aprender " +
+      "e continuar escolhendo uma à outra.\n\n" +
+      "Quando Claire pergunta se Bell ainda quer ficar, a resposta " +
+      "vem acompanhada de um sorriso: “Dessa vez, eu quero ficar " +
+      "e fazer dar certo.”\n\n" +
+      "A história delas não termina aqui. É apenas um novo começo.",
+    choices: []
+  },
+
+  slow: {
+    chapter: "Final desbloqueado",
+    title: "Final 2 — No nosso tempo 🌷",
+    ending: true,
+    badge: "Final delicado",
+    text:
+      "Claire e Bell decidem começar devagar. Um café se transforma " +
+      "em dois, as mensagens voltam a chegar todas as noites e " +
+      "a confiança cresce com cada pequena promessa cumprida.\n\n" +
+      "Elas descobrem que o amor não precisa ser apressado para " +
+      "ser verdadeiro. Às vezes, a parte mais bonita de uma história " +
+      "é a coragem de construí-la um dia de cada vez.",
+    choices: []
+  },
+
+  distance: {
+    chapter: "Final desbloqueado",
+    title: "Final 3 — O que poderia ter sido 🌙",
+    ending: true,
+    badge: "Final agridoce",
+    text:
+      "O tempo passa e a mensagem nunca chega. Claire e Bell seguem " +
+      "suas vidas, levando consigo lembranças que ainda provocam " +
+      "um sorriso triste.\n\n" +
+      "Talvez um dia seus caminhos se cruzem novamente. " +
+      "Por enquanto, fica a lembrança de um sentimento verdadeiro " +
+      "que não encontrou coragem suficiente para florescer.\n\n" +
+      "Nem toda história termina como esperamos. Mas todas " +
+      "podem nos ensinar algo sobre amar.",
+    choices: []
+  }
+};
+
+let currentScene = "start";
+let history = [];
+let selectedChoice = null;
+
+const gameScreen = document.getElementById("gameScreen");
+const feedbackBox = document.getElementById("gameFeedback");
+const nextBtn = document.getElementById("nextBtn");
+const chapterLabel = document.getElementById("chapterLabel");
+const progressLabel = document.getElementById("progressLabel");
+const progressFill = document.getElementById("progressFill");
+
+function renderScene() {
+  const scene = story[currentScene];
+
+  chapterLabel.textContent = scene.chapter;
+
+  const visited = history.length;
+  const progress = scene.ending
+    ? 100
+    : Math.min(90, visited * 25);
+
+  progressFill.style.width = progress + "%";
+  progressLabel.textContent = progress + "% concluído";
+
+  let html = "";
+
+  if (scene.badge) {
+    html += `
+      <span class="ending-badge">${scene.badge}</span>
+    `;
+  }
+
+  html += `
+    <h3>${scene.title}</h3>
+    <p class="game-story">${scene.text}</p>
+  `;
+
+  if (scene.ending) {
+    html += `
+      <p style="
+        color:#a14c72;
+        font-weight:600;
+        margin-top:15px;
+      ">
+        ✧ Fim deste caminho. Quer descobrir outro final?
+      </p>
+    `;
+  } else {
+    html += `<div class="choices">`;
+
+    scene.choices.forEach((choice, index) => {
+      html += `
+        <button
+          class="choice-btn"
+          data-choice="${index}">
+          ${choice.label}
+        </button>
+      `;
+    });
+
+    html += `</div>`;
+  }
+
+  gameScreen.innerHTML = html;
+
+  feedbackBox.classList.remove("show");
+  feedbackBox.textContent = "";
+
+  nextBtn.style.display = "none";
+
+  selectedChoice = null;
+
+  gameScreen.querySelectorAll("[data-choice]").forEach(button => {
+    button.addEventListener("click", () => {
+      chooseOption(Number(button.dataset.choice));
+    });
+  });
+}
+
+function chooseOption(index) {
+  const scene = story[currentScene];
+
+  if (!scene || scene.ending || selectedChoice !== null) {
+    return;
+  }
+
+  const choice = scene.choices[index];
+
+  if (!choice) return;
+
+  selectedChoice = choice;
+
+  gameScreen.querySelectorAll("[data-choice]").forEach(button => {
+    button.disabled = true;
+  });
+
+  feedbackBox.textContent = choice.feedback;
+  feedbackBox.classList.add("show");
+
+  nextBtn.style.display = "inline-block";
+  nextBtn.textContent = "Descobrir o que acontece ✧";
+}
+
+function continueGame() {
+  if (!selectedChoice) return;
+
+  history.push(currentScene);
+  currentScene = selectedChoice.next;
+
+  renderScene();
+
+  document.querySelector(".game-container").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+function restartGame() {
+  currentScene = "start";
+  history = [];
+  selectedChoice = null;
+
+  renderScene();
+
+  document.querySelector(".game-container").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+renderScene();
+
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
 
